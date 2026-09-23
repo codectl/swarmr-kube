@@ -24,7 +24,7 @@ from typing import Any
 import yaml
 from kubernetes import client, config
 
-from swarmr_k8s_incident.rbac import SA_NAME, SA_NAMESPACE, ensure_rbac
+from swarmr_kube.rbac import SA_NAME, SA_NAMESPACE, ensure_rbac
 
 __all__ = ["DEFAULT_TTL", "Minted", "contexts", "credential_path", "mint"]
 

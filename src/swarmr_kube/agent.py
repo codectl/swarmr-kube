@@ -18,15 +18,15 @@ from swarmr.core.middleware import AnnounceName, FirstRoundBriefing
 from swarmr.core.model import build_model
 from swarmr.core.team import RunContext, TeamBuild
 
-from swarmr_k8s_incident import prompts
-from swarmr_k8s_incident.discovery import (
+from swarmr_kube import prompts
+from swarmr_kube.discovery import (
     ClusterProfile,
     profile_cluster,
     render_facts,
     render_routing,
 )
-from swarmr_k8s_incident.report_tool import FILE_REPORT_TOOL
-from swarmr_k8s_incident.tools import (
+from swarmr_kube.report_tool import FILE_REPORT_TOOL
+from swarmr_kube.tools import (
     CRITIC_TOOLS,
     INVESTIGATOR_TOOLS,
     PLATFORM_TOOLS,

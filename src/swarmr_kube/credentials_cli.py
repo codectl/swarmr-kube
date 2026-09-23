@@ -16,13 +16,13 @@ from __future__ import annotations
 import argparse
 import sys
 
-from swarmr_k8s_incident.credentials import (
+from swarmr_kube.credentials import (
     DEFAULT_TTL,
     contexts,
     credential_path,
     mint,
 )
-from swarmr_k8s_incident.rbac import manifest
+from swarmr_kube.rbac import manifest
 
 __all__ = ["main"]
 

@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import pytest
 
-from swarmr_k8s_incident.report_tool import render_report_args
+from swarmr_kube.report_tool import render_report_args
 
 
 def test_filed_arguments_render_every_section() -> None:

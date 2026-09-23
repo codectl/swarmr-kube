@@ -18,19 +18,19 @@ import pytest
 import yaml
 from kubernetes import client
 
-from swarmr_k8s_incident.client import (
+from swarmr_kube.client import (
     CredentialError,
     _ago,
     _AuthCheckedApiClient,
     _kubeconfig,
 )
-from swarmr_k8s_incident.credentials import credential_path
-from swarmr_k8s_incident.rbac import READ_ONLY_RULES, manifest
+from swarmr_kube.credentials import credential_path
+from swarmr_kube.rbac import READ_ONLY_RULES, manifest
 
-_CLIENT = "swarmr_k8s_incident.client"
+_CLIENT = "swarmr_kube.client"
 _MINTED = f"{_CLIENT}._minted_credentials"
 _TOKEN = f"{_CLIENT}.IN_CLUSTER_TOKEN"
-_CREDENTIALS = "swarmr_k8s_incident.credentials"
+_CREDENTIALS = "swarmr_kube.credentials"
 
 
 @dataclass(frozen=True, slots=True)

@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import json
 
-from swarmr_k8s_incident.digest import digest_result
+from swarmr_kube.digest import digest_result
 
 
 def test_object_list_names_the_first_few() -> None:

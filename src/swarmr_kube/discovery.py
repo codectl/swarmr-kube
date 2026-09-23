@@ -17,7 +17,7 @@ from datetime import UTC, datetime
 
 from kubernetes import client
 
-from swarmr_k8s_incident.client import kube_clients
+from swarmr_kube.client import kube_clients
 
 __all__ = ["ClusterProfile", "profile_cluster", "render_facts", "render_routing"]
 

@@ -11,7 +11,7 @@ from datetime import UTC, datetime, timedelta
 
 import pytest
 
-from swarmr_k8s_incident.projection import (
+from swarmr_kube.projection import (
     age,
     clean_log,
     container_state,

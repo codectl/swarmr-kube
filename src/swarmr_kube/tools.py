@@ -24,12 +24,12 @@ from typing import Any
 from kubernetes import client
 from langchain_core.tools import tool
 
-from swarmr_k8s_incident.client import core_api, custom_api
-from swarmr_k8s_incident.describe import k_describe
-from swarmr_k8s_incident.kinds import resolve_kind
-from swarmr_k8s_incident.output import MAX_BYTES, cached, emit, guard
-from swarmr_k8s_incident.projection import age, clean_log, digest
-from swarmr_k8s_incident.registry import image_platforms
+from swarmr_kube.client import core_api, custom_api
+from swarmr_kube.describe import k_describe
+from swarmr_kube.kinds import resolve_kind
+from swarmr_kube.output import MAX_BYTES, cached, emit, guard
+from swarmr_kube.projection import age, clean_log, digest
+from swarmr_kube.registry import image_platforms
 
 __all__ = [
     "CRITIC_TOOLS",

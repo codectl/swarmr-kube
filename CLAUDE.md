@@ -1,4 +1,4 @@
-# CLAUDE.md — swarmr-k8s-incident
+# CLAUDE.md — swarmr-kube
 
 ## Overview
 
@@ -6,10 +6,10 @@ Kubernetes incident response team for [swarmr](https://github.com/azyphon/swarmr
 
 Read-only twice over: the credential grants only `get/list/watch`, and Deep Agents filesystem permissions deny writes outside `evidence/`. Nothing about the target cluster is hardcoded — `discovery.py` profiles the live cluster at build time and the profile is injected into every prompt.
 
-- **Distribution:** `swarmr-k8s-incident` (`src/swarmr_k8s_incident`, hatchling)
+- **Distribution:** `swarmr-kube` (`src/swarmr_kube`, hatchling)
 - **Python:** >=3.13
 - **Deps:** `swarmr>=1.0,<2`, `kubernetes>=32`, `pyyaml>=6`
-- **Entry point:** `swarmr.teams` group → `k8s_incident = "swarmr_k8s_incident:TEAM"`
+- **Entry point:** `swarmr.teams` group → `k8s_incident = "swarmr_kube:TEAM"`
 - **Script:** `incident-credentials`
 
 **The roster.** `commander` orchestrates and holds no cluster tools of its own. `workload` asks whether the container itself is failing; `network` whether traffic can reach a serving backend; `storage` whether the pod is blocked before it ever started; `platform` whether placement, capacity or node architecture is the problem. `critic` independently tries to disprove whatever hypothesis those four produce.
@@ -238,7 +238,7 @@ The render path is the only place this can live: the filed report is emitted fro
 
 No cluster, no model calls. `testpaths = ["src"]`, tests beside the code they cover, excluded from the wheel.
 
-- `test_contract.py` — the important one. Pins the vocabulary `core` reads off this team, that no mutating tool exists in any role's set, that the permission rule sets grant and deny in the right order, that `build`/`profile`/`render_report` stay behind `Lazy`, and — in a subprocess, since this process has already imported the agent module — that `build_server()` loads no `swarmr_k8s_incident.agent` and stays under 1500 modules. That last claim can only be made here: core ships no team, so it has nothing to prove unimported.
+- `test_contract.py` — the important one. Pins the vocabulary `core` reads off this team, that no mutating tool exists in any role's set, that the permission rule sets grant and deny in the right order, that `build`/`profile`/`render_report` stay behind `Lazy`, and — in a subprocess, since this process has already imported the agent module — that `build_server()` loads no `swarmr_kube.agent` and stays under 1500 modules. That last claim can only be made here: core ships no team, so it has nothing to prove unimported.
 - `test_credentials.py` — resolution order, expiry parsing, refresh gating, minting.
 - `test_discovery.py`, `test_projection.py`, `test_digest.py`, `test_registry.py`, `test_report.py` — pure functions over fixture payloads.
 - `test_e2e.py` — marked `e2e`, needs a live cluster and a model key, gated behind `INCIDENT_E2E=1`.

@@ -1,4 +1,4 @@
-# swarmr k8s incident
+# swarmr-kube
 
 Kubernetes incident response team for
 [swarmr](https://github.com/azyphon/swarmr-lib). Diagnoses a live cluster and
@@ -14,9 +14,9 @@ prompt.
 Core and this team must land in the **same environment**.
 
 ```
-uv tool install git+https://github.com/azyphon/swarmr-lib \
-  --with git+https://github.com/azyphon/swarmr-k8s-incident \
-  --with-executables-from swarmr-k8s-incident
+uv tool install git+https://github.com/azyphon/swarmr \
+  --with git+https://github.com/azyphon/swarmr-kube \
+  --with-executables-from swarmr-kube
 ```
 
 That exposes `teams`, `teams-mcp` and `incident-credentials` on your PATH.

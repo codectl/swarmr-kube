@@ -1,5 +1,5 @@
 [project]
-name = "swarmr-k8s-incident"
+name = "swarmr-kube"
 version = "1.0.1"
 description = "Kubernetes incident investigation team for swarmr."
 requires-python = ">=3.13"
@@ -18,17 +18,17 @@ dev = ["pytest>=8", "pytest-cov>=5", "ruff>=0.6", "pyright>=1.1"]
 # The one line that makes this package a team. `swarmr` reads this group from
 # installed distribution metadata and imports nothing until the team is run.
 [project.entry-points."swarmr.teams"]
-k8s_incident = "swarmr_k8s_incident:TEAM"
+k8s_incident = "swarmr_kube:TEAM"
 
 [project.scripts]
-incident-credentials = "swarmr_k8s_incident.credentials_cli:main"
+incident-credentials = "swarmr_kube.credentials_cli:main"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/swarmr_k8s_incident"]
+packages = ["src/swarmr_kube"]
 # Tests live beside the code they test; they are not part of the installed
 # package. The demo manifests are, so `teams` users can reproduce a scenario.
 exclude = ["**/tests"]

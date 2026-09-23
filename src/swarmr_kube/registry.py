@@ -16,7 +16,7 @@ from typing import Any
 
 from langchain_core.tools import tool
 
-from swarmr_k8s_incident.output import cached, emit, guard
+from swarmr_kube.output import cached, emit, guard
 
 __all__ = ["image_platforms", "parse_ref"]
 

@@ -24,7 +24,7 @@ from typing import Any
 
 from langchain_core.tools import tool
 
-from swarmr_k8s_incident.redaction import (
+from swarmr_kube.redaction import (
     LOCATION_CAVEAT,
     OMITTED_NOTE,
     diagnosis,

@@ -5,7 +5,7 @@ API key, and it costs several minutes and real tokens. It exercises exactly the
 path an MCP client takes, so a green run here means the integration surface
 works and not merely that the tools list.
 
-    E2E=src/swarmr/teams/k8s_incident/tests/test_e2e.py
+    E2E=src/swarmr_kube/tests/test_e2e.py
     INCIDENT_E2E=1 .venv/bin/python -m pytest "$E2E" -s
     .venv/bin/python "$E2E" k8s_incident "will not start"
 """

@@ -13,10 +13,10 @@ from typing import Any
 
 from langchain_core.tools import tool
 
-from swarmr_k8s_incident.client import core_api
-from swarmr_k8s_incident.kinds import resolve_kind
-from swarmr_k8s_incident.output import cached, emit, guard
-from swarmr_k8s_incident.projection import age
+from swarmr_kube.client import core_api
+from swarmr_kube.kinds import resolve_kind
+from swarmr_kube.output import cached, emit, guard
+from swarmr_kube.projection import age
 
 __all__ = ["k_describe"]
 

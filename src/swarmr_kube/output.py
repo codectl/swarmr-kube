@@ -18,7 +18,7 @@ from typing import Any
 
 from kubernetes import client
 
-from swarmr_k8s_incident.client import CredentialError
+from swarmr_kube.client import CredentialError
 
 __all__ = ["CACHE_TTL", "MAX_BYTES", "cached", "emit", "guard"]
 

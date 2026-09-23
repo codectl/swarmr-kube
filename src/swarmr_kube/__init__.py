@@ -19,12 +19,12 @@ from __future__ import annotations
 
 from swarmr.core.team import Lazy, Member, Team
 
-from swarmr_k8s_incident.digest import digest_result, is_tool_error
-from swarmr_k8s_incident.prompts import SWEEP_REQUEST
+from swarmr_kube.digest import digest_result, is_tool_error
+from swarmr_kube.prompts import SWEEP_REQUEST
 
 __all__ = ["TEAM"]
 
-_MODULE = "swarmr_k8s_incident"
+_MODULE = "swarmr_kube"
 
 TEAM = Team(
     name="k8s_incident",

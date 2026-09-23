@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import pytest
 
-from swarmr_k8s_incident.discovery import (
+from swarmr_kube.discovery import (
     ClusterProfile,
     render_facts,
     render_routing,

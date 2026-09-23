@@ -129,7 +129,7 @@ def _refresh(path: str, context: str) -> None:
     it is not the credential this team is allowed to investigate with, and the
     run stops instead of quietly escalating.
     """
-    from swarmr_k8s_incident.credentials import mint
+    from swarmr_kube.credentials import mint
 
     minted = mint(context=context, directory=Path(path).parent)
     if not minted.ok:

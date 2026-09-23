@@ -14,10 +14,10 @@ from swarmr.core.team import Lazy
 from swarmr.teams import get
 from swarmr.teams import names as registered_names
 
-from swarmr_k8s_incident import TEAM
-from swarmr_k8s_incident.agent import _EVIDENCE_ONLY, _NO_WRITES
-from swarmr_k8s_incident.digest import digest_result
-from swarmr_k8s_incident.tools import CRITIC_TOOLS, PLATFORM_TOOLS
+from swarmr_kube import TEAM
+from swarmr_kube.agent import _EVIDENCE_ONLY, _NO_WRITES
+from swarmr_kube.digest import digest_result
+from swarmr_kube.tools import CRITIC_TOOLS, PLATFORM_TOOLS
 
 
 class TestVocabulary:
@@ -55,7 +55,7 @@ class TestVocabulary:
         for name in ("build", "profile", "render_report"):
             declared = getattr(TEAM, name)
             assert isinstance(declared, Lazy), name
-            assert declared.target.startswith("swarmr_k8s_incident.")
+            assert declared.target.startswith("swarmr_kube.")
 
 
 class TestToolSets:
@@ -102,7 +102,7 @@ def test_publishing_the_mcp_surface_imports_no_team_implementation() -> None:
         "import sys\n"
         "from swarmr.server import build_server\n"
         "build_server()\n"
-        "heavy = [m for m in sys.modules if m.endswith('swarmr_k8s_incident.agent')]\n"
+        "heavy = [m for m in sys.modules if m.endswith('swarmr_kube.agent')]\n"
         "print(heavy, len(sys.modules))\n"
     )
     done = subprocess.run(

@@ -12,7 +12,7 @@ from __future__ import annotations
 from functools import cache
 from typing import Any
 
-from swarmr_k8s_incident.client import dynamic_api
+from swarmr_kube.client import dynamic_api
 
 __all__ = ["resolve_kind"]
 

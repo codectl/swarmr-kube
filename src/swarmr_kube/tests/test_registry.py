@@ -8,8 +8,8 @@ from __future__ import annotations
 
 import pytest
 
-from swarmr_k8s_incident.registry import parse_ref
-from swarmr_k8s_incident.tools import (
+from swarmr_kube.registry import parse_ref
+from swarmr_kube.tools import (
     CRITIC_TOOLS,
     INVESTIGATOR_TOOLS,
     PLATFORM_TOOLS,
