@@ -8,7 +8,7 @@ requires-python = ">=3.13"
 # `RunContext`, `TeamBuild` and the `swarmr.teams` entry-point group are an ABI
 # this package implements; a minor bump may move them.
 dependencies = [
-  "swarmr>=1.0,<2",
+  "swarmr>=1.3,<2",
   "kubernetes>=32",
   "pyyaml>=6",
 ]
