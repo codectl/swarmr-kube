@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/codectl/swarmr-kube/compare/v1.1.0...v1.1.1) (2026-10-03)
+
+
+### Bug Fixes
+
+* take the run context in profile target and required swarmr v1.3 ([#8](https://github.com/codectl/swarmr-kube/issues/8)) ([204ccd9](https://github.com/codectl/swarmr-kube/commit/204ccd910e7e0dcad3fd2386a25df7ff0441ba3c))
+
 ## [1.1.0](https://github.com/codectl/swarmr-kube/compare/v1.0.1...v1.1.0) (2026-10-03)
 
 
