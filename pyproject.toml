@@ -2,6 +2,7 @@
 name = "swarmr-kube"
 version = "1.0.1"
 description = "Kubernetes incident investigation team for swarmr."
+readme = "README.md"
 requires-python = ">=3.13"
 # The team owns its SDK. `swarmr` is capped to a minor because `Team`,
 # `RunContext`, `TeamBuild` and the `swarmr.teams` entry-point group are an ABI
@@ -22,6 +23,11 @@ k8s_incident = "swarmr_kube:TEAM"
 
 [project.scripts]
 incident-credentials = "swarmr_kube.credentials_cli:main"
+
+[project.urls]
+Homepage = "https://github.com/codectl/swarmr-kube"
+Source = "https://github.com/codectl/swarmr-kube"
+Issues = "https://github.com/codectl/swarmr-kube/issues"
 
 [build-system]
 requires = ["hatchling"]

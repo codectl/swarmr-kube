@@ -14,13 +14,12 @@ prompt.
 Core and this team must land in the **same environment**.
 
 ```
-uv tool install git+https://github.com/azyphon/swarmr \
-  --with git+https://github.com/azyphon/swarmr-kube \
-  --with-executables-from swarmr-kube
+uv tool install "swarmr[kube]" --with-executables-from swarmr-kube
 ```
 
 That exposes `teams`, `teams-mcp` and `incident-credentials` on your PATH.
-`--with-executables-from` is required for the third.
+`--with-executables-from` is required for the third. From a checkout:
+`uv tool install ../swarmr --with ../swarmr-kube --with-executables-from swarmr-kube`.
 
 ```
 teams --target k8s_incident
