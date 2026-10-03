@@ -147,13 +147,15 @@ def _banner(profile: ClusterProfile) -> str:
     )
 
 
-def profile_target() -> str:
+def profile_target(run: RunContext) -> str:
     """Describe the live cluster without building an agent.
 
     Separate from `build` because building constructs a model client: fused, an
     operator asking "which cluster am I pointed at" got a missing-API-key error,
-    having never contacted the cluster at all.
+    having never contacted the cluster at all. The run is unused: this team
+    declares no params, its target is the credential.
     """
+    del run
     return _banner(profile_cluster())
 
 
