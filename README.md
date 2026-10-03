@@ -1,7 +1,7 @@
 # swarmr-kube
 
 Kubernetes incident response team for
-[swarmr](https://github.com/azyphon/swarmr-lib). Diagnoses a live cluster and
+[swarmr](https://github.com/codectl/swarmr). Diagnoses a live cluster and
 proves the root cause.
 
 Read-only twice over: the credential grants only get/list/watch, and filesystem

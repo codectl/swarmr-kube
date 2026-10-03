@@ -14,12 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
-      # `.venv` and nothing else: pyproject pins pyright to venvPath="."/venv=".venv",
-      # so CI must type-check the same environment an editor and `uv` do.
       - run: uv venv --python 3.13
-      # swarmr is this team's SDK and is not on an index yet; install it from main
-      # first so the editable install below resolves the `swarmr>=1.0,<2` pin.
-      - run: uv pip install git+https://github.com/azyphon/swarmr-lib@main
+      - run: uv pip install git+https://github.com/codectl/swarmr@main
       - run: uv pip install -e ".[dev]"
       - run: .venv/bin/python -m pytest
       - run: .venv/bin/python -m ruff check .

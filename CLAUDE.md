@@ -2,7 +2,7 @@
 
 ## Overview
 
-Kubernetes incident response team for [swarmr](https://github.com/azyphon/swarmr-lib). Diagnoses a live cluster and proves the root cause. An incident commander delegates in parallel to four read-only domain investigators, then a critic independently tries to disprove the resulting hypothesis before it is reported.
+Kubernetes incident response team for [swarmr](https://github.com/codectl/swarmr). Diagnoses a live cluster and proves the root cause. An incident commander delegates in parallel to four read-only domain investigators, then a critic independently tries to disprove the resulting hypothesis before it is reported.
 
 Read-only twice over: the credential grants only `get/list/watch`, and Deep Agents filesystem permissions deny writes outside `evidence/`. Nothing about the target cluster is hardcoded — `discovery.py` profiles the live cluster at build time and the profile is injected into every prompt.
 
@@ -245,7 +245,7 @@ No cluster, no model calls. `testpaths = ["src"]`, tests beside the code they co
 
 ```
 python3 -m venv .venv && source .venv/bin/activate
-pip install -e ../swarmr-lib -e ".[dev]"
+pip install -e ../swarmr -e ".[dev]"
 pytest
 INCIDENT_E2E=1 pytest -s
 ruff check . && pyright
@@ -253,7 +253,7 @@ ruff check . && pyright
 
 Unlike core, this project **does** pin `venvPath="."`/`venv=".venv"`: that is the only project-level signal an editor's pyright reads, and without it the language server type-checks against whatever bare interpreter is on PATH. CI therefore builds `.venv` too, so the one path is correct everywhere.
 
-CI (`.github/workflows/ci.yml`) uses `uv`, installs `swarmr` from git `@main` **before** the editable install — the `swarmr>=1.0,<2` pin resolves against an index that does not carry it — then runs `pytest`, `ruff check .` and `pyright` from `.venv/bin/python`.
+CI (`.github/workflows/ci.yml`) uses `uv`, installs `swarmr` from git `@main` **before** the editable install — so the team is tested against core's head rather than the last PyPI release — then runs `pytest`, `ruff check .` and `pyright` from `.venv/bin/python`. Releases (`.github/workflows/publish.yml`): release-please opens the release PR on every push to `main`; merging it tags, creates the GitHub Release and publishes to PyPI through trusted publishing in the same workflow run.
 
 ## Dependencies
 
