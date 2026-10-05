@@ -52,4 +52,6 @@ The 8h token refreshes itself: every run reads the expiry before opening a
 connection and re-mints when under five minutes remain. Only files this team
 minted are ever rewritten. `INCIDENT_NO_REFRESH=1` turns it off.
 
-Design notes and internals: [CLAUDE.md](CLAUDE.md).
+## References
+
+- [Architecture overview](./CLAUDE.md)
